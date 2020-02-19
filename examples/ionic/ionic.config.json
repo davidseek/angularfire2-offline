@@ -1,6 +1,7 @@
 {
   "name": "myApp",
-  "app_id": "",
+  "integrations": {},
+  "type": "angular",
   "v2": true,
   "typescript": true
 }

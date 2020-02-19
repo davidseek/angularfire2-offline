@@ -13,6 +13,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LOCALFORAGE_PROVIDER } from './database/offline-storage/localforage';
+import { AngularFireOfflineDatabase } from './database/database';
+import { LocalUpdateService } from './database/offline-storage/local-update-service';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyCIijNJKaFfNLhlVcN_Ip8b5EiY-qy_N7w',
@@ -47,7 +50,10 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LocalUpdateService,
+    LOCALFORAGE_PROVIDER,
+    AngularFireOfflineDatabase,
   ]
 })
 export class AppModule {}
